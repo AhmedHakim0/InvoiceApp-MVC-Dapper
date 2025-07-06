@@ -149,4 +149,5 @@ Before running the project, make sure to update the **connection string** in `ap
 
 
 
+Fix: show Home Page image in README
 
