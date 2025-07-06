@@ -129,26 +129,26 @@ Before running the project, make sure to update the **connection string** in `ap
 
 ### 🏠 Home Page
 
-![Home Page](screenshots/HomePageEN.png)
+![Home Page](https://raw.githubusercontent.com/AhmedHakim0/InvoiceApp-MVC-Dapper/main/screenshots/HomePageEN.png)
 
 ### 🧾 Login & Registration
 
-![Login](screenshots/LoginEN.png)  
-![Registration](screenshots/Registration.png)
+![Login](https://raw.githubusercontent.com/AhmedHakim0/InvoiceApp-MVC-Dapper/main/screenshots/LoginEN.png)  
+![Registration](https://raw.githubusercontent.com/AhmedHakim0/InvoiceApp-MVC-Dapper/main/screenshots/Registration.png)
 
 ### 🧾 Create Invoice
 
-![Create Invoice](screenshots/AddNewInvoice.png)
+![Create Invoice](https://raw.githubusercontent.com/AhmedHakim0/InvoiceApp-MVC-Dapper/main/screenshots/AddNewInvoice.png)
 
 ### 📃 Invoice List
 
-![Invoice List](screenshots/InvoicesEN.png)
+![Invoice List](https://raw.githubusercontent.com/AhmedHakim0/InvoiceApp-MVC-Dapper/main/screenshots/InvoicesEN.png)
 
 ### 🌐 RTL Arabic View
 
-![Home Page Arabic](screenshots/HomePageAR.png)  
-![Login Arabic](screenshots/LoginAR.png)  
-![Invoice List Arabic](screenshots/InvoicesAR.png)
+![Home Page Arabic](https://raw.githubusercontent.com/AhmedHakim0/InvoiceApp-MVC-Dapper/main/screenshots/HomePageAR.png)  
+![Login Arabic](https://raw.githubusercontent.com/AhmedHakim0/InvoiceApp-MVC-Dapper/main/screenshots/LoginAR.png)  
+![Invoice List Arabic](https://raw.githubusercontent.com/AhmedHakim0/InvoiceApp-MVC-Dapper/main/screenshots/InvoicesAR.png)
 
 
 
