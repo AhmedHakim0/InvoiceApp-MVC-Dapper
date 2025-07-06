@@ -109,7 +109,7 @@ Before running the project, make sure to update the **connection string** in `ap
 - Toggle between:
   - **English 🇬🇧**
   - **Arabic ar**
-  - **العربية 🇸🇦**
+
 - RTL layout is applied dynamically when switching to Arabic
 
 ---
@@ -130,7 +130,7 @@ Before running the project, make sure to update the **connection string** in `ap
 ## 🖼️ Screenshots
 
 ### 🏠 Home Page
-![Home Page](https://github.com/AhmedHakim0/InvoiceApp-MVC-Dapper/blob/main/screenshots/HomePageEN.png?raw=true)
+[![Home Page](https://github.com/AhmedHakim0/InvoiceApp-MVC-Dapper/blob/main/screenshots/HomePageEN.png?raw=true)](https://github.com/AhmedHakim0/InvoiceApp-MVC-Dapper/blob/main/screenshots/HomePageAR.png)
 
 ### 🧾 Login/Registration
 ![Login](https://github.com/AhmedHakim0/InvoiceApp-MVC-Dapper/blob/main/screenshots/LoginEN.png?raw=true)
