@@ -1,3 +1,4 @@
+
 # 🧾 Invoice Web Application - ASP.NET Core MVC (.NET 7)
 
 A professional Invoice Management System built using **ASP.NET Core MVC**, **Dapper**, and **SQL Server**. The project follows clean architecture principles and provides full **multilingual support** (English 🇬🇧 & Arabic 🇸🇦).
@@ -129,7 +130,7 @@ Before running the project, make sure to update the **connection string** in `ap
 
 ### 🏠 Home Page
 
-![Home Page](https://raw.githubusercontent.com/AhmedHakim0/InvoiceApp-MVC-Dapper/main/screenshots/HomePageEN.png)
+![HomePageEN](https://github.com/user-attachments/assets/2256fed1-86fa-47be-92a5-cf8ff1ffc1c2)
 
 ### 🧾 Login & Registration
 
