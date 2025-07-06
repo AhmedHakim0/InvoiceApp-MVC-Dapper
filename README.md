@@ -129,11 +129,18 @@ Before running the project, make sure to update the **connection string** in `ap
 
 ## 🖼️ Screenshots
 
-![Home Page](screenshots/HomePageEN.png)
+## 🖼️ Screenshots
 
-### 🧾 Login/Registration
-![Login](https://github.com/AhmedHakim0/InvoiceApp-MVC-Dapper/blob/main/screenshots/LoginEN.png?raw=true)
-![Registration](https://github.com/AhmedHakim0/InvoiceApp-MVC-Dapper/blob/main/screenshots/Registration.png?raw=true)
+### 🏠 Home Page
+
+![Home Page](/screenshots/HomePageEN.png)
+
+### 🧾 Login / Registration
+
+![Login](/screenshots/LoginEN.png)  
+![Registration](/screenshots/Registration.png)
+
+<!-- وهكذا لباقي الصور -->
 
 ### 🧾 Create Invoice
 ![Create Invoice](https://github.com/AhmedHakim0/InvoiceApp-MVC-Dapper/blob/main/screenshots/AddNewInvoice.png?raw=true)
