@@ -2,8 +2,6 @@
 
 A professional Invoice Management System built using **ASP.NET Core MVC**, **Dapper**, and **SQL Server**. The project follows clean architecture principles and provides full **multilingual support** (English 🇬🇧 & Arabic 🇸🇦).
 
-> Developed as part of the **IT Roots .NET Junior Task**.
-
 ---
 
 ## 🚀 Features
@@ -129,29 +127,28 @@ Before running the project, make sure to update the **connection string** in `ap
 
 ## 🖼️ Screenshots
 
-## 🖼️ Screenshots
-
 ### 🏠 Home Page
 
-![Home Page](/screenshots/HomePageEN.png)
+![Home Page](screenshots/HomePageEN.png)
 
-### 🧾 Login / Registration
+### 🧾 Login & Registration
 
-![Login](/screenshots/LoginEN.png)  
-![Registration](/screenshots/Registration.png)
-
-<!-- وهكذا لباقي الصور -->
+![Login](screenshots/LoginEN.png)  
+![Registration](screenshots/Registration.png)
 
 ### 🧾 Create Invoice
-![Create Invoice](https://github.com/AhmedHakim0/InvoiceApp-MVC-Dapper/blob/main/screenshots/AddNewInvoice.png?raw=true)
+
+![Create Invoice](screenshots/AddNewInvoice.png)
 
 ### 📃 Invoice List
-![Invoice List](https://github.com/AhmedHakim0/InvoiceApp-MVC-Dapper/blob/main/screenshots/InvoicesEN.png?raw=true)
+
+![Invoice List](screenshots/InvoicesEN.png)
 
 ### 🌐 RTL Arabic View
-![Home Page Arabic](https://raw.githubusercontent.com/AhmedHakim0/InvoiceApp-MVC-Dapper/main/screenshots/HomePageAR.png)
-![Login Arabic](https://github.com/AhmedHakim0/InvoiceApp-MVC-Dapper/blob/main/screenshots/LoginAR.png?raw=true)
-![Invoice List Arabic](https://github.com/AhmedHakim0/InvoiceApp-MVC-Dapper/blob/main/screenshots/InvoicesAR.png?raw=true)
+
+![Home Page Arabic](screenshots/HomePageAR.png)  
+![Login Arabic](screenshots/LoginAR.png)  
+![Invoice List Arabic](screenshots/InvoicesAR.png)
 
 
 
