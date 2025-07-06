@@ -1,0 +1,91 @@
+﻿@model InvoiceWebApp.ViewModels.InvoiceListViewModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+
+@{
+    ViewData["Title"] = "Invoices";
+}
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">@Localizer["InvoiceList"]</h2>
+        <a asp-action="Create" class="btn btn-success">+@Localizer["New Invoice"] </a>
+    </div>
+
+    <form method="get" asp-action="Index" class="row g-3 mb-4">
+        <div class="col-auto">
+            <input type="number" name="searchId" class="form-control" placeholder="Search by Invoice ID" />
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-outline-primary">@Localizer["Search"]</button>
+        </div>
+    </form>
+
+    @if (!Model.Invoices.Any())
+    {
+        <div class="alert alert-info text-center">
+            No invoices available.
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped table-hover shadow-sm">
+            <thead class="table-dark">
+                <tr>
+                    <th>@Localizer["InvoiceID"]</th>
+                    <th>@Localizer["Date"]</th>
+                    <th>@Localizer["TotalAmount"]</th>
+                    <th style="width: 240px;">@Localizer["Actions"]</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var invoice in Model.Invoices)
+                {
+                    <tr>
+                        <td>@invoice.Id</td>
+                        <td>@invoice.InvoiceDate.ToString("yyyy-MM-dd")</td>
+                        <td>$@invoice.TotalAmount</td>
+                        <td>
+                            <div class="d-flex flex-wrap gap-1">
+                                <a class="btn btn-info" asp-action="Details" asp-route-id="@invoice.Id">@Localizer["Details"]</a>
+                                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@invoice.Id">@Localizer["Edit"]</a>
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@invoice.Id">@Localizer["Delete"]</a>
+
+                            </div>
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <nav aria-label="Invoice pagination" class="mt-4">
+            <ul class="pagination justify-content-center">
+
+                @if (Model.CurrentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)">@Localizer["Previous"]</a>
+                    </li>
+                }
+
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-page="@i">@i</a>
+                    </li>
+                }
+
+                @if (Model.CurrentPage < Model.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)">@Localizer["Next"]</a>
+                    </li>
+                }
+
+            </ul>
+        </nav>
+
+
+    }
+</div>

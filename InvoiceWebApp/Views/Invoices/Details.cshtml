@@ -1,0 +1,67 @@
+﻿@model InvoiceWebApp.Models.Invoice
+
+@{
+    ViewData["Title"] = "Invoice Details";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-body p-5">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="fw-bold text-primary mb-0">Invoice #@Model.Id</h3>
+                <span class="text-muted"><i class="bi bi-calendar3"></i> @Model.InvoiceDate.ToString("yyyy-MM-dd")</span>
+            </div>
+
+            <h5 class="mb-3">Items</h5>
+
+            <table class="table table-bordered align-middle text-center">
+                <thead class="table-primary">
+                    <tr class="text-uppercase small">
+                        <th><i data-lucide="box"></i> Product</th>
+                        <th><i data-lucide="hash"></i> Qty</th>
+                        <th><i data-lucide="dollar-sign"></i> Unit Price</th>
+                        <th><i data-lucide="calculator"></i> Total</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            <td>@item.ProductName</td>
+                            <td>@item.Quantity</td>
+                            <td>$@item.UnitPrice.ToString("F2")</td>
+                            <td class="fw-bold">$@(item.Quantity* item.UnitPrice)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <div class="fs-5 fw-bold text-success">
+                    Total: $@Model.Items.Sum(i => i.Quantity * i.UnitPrice).ToString("F2")
+                </div>
+
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-primary me-2">
+                        <i data-lucide="edit" class="me-1"></i> Edit
+                    </a>
+
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i data-lucide="arrow-left" class="me-1"></i> Back
+                    </a>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        lucide.createIcons();
+    </script>
+}

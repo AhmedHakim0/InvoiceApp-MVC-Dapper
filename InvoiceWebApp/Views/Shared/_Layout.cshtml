@@ -1,0 +1,105 @@
+﻿@using System.Globalization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+
+<!DOCTYPE html>
+<html lang="@CultureInfo.CurrentUICulture.Name" dir="@(CultureInfo.CurrentUICulture.Name == "ar" ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - InvoiceApp</title>
+
+    @if (CultureInfo.CurrentUICulture.Name == "ar")
+    {
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" />
+    }
+    else
+    {
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    }
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
+    
+    @RenderSection("Styles", required: false)
+
+    
+
+</head>
+<body class="@(CultureInfo.CurrentUICulture.Name == "ar" ? "rtl" : "")">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75 fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" asp-controller="Invoices" asp-action="Index">InvoiceApp</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    @if (User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <span class="nav-link text-white">👤 @User.Identity.Name</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-controller="Invoices" asp-action="Index">@Localizer["Invoices"]</a>
+                        </li>
+                        <li class="nav-item">
+                            <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                <button class="nav-link btn btn-link text-white" type="submit">@Localizer["Logout"]</button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-controller="Account" asp-action="Login">@Localizer["Login"]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-controller="Account" asp-action="Register">@Localizer["Register"]</a>
+                        </li>
+                    }
+
+                   
+                    <li class="nav-item">
+                        <form asp-controller="Home" asp-action="SetLanguage" method="post" class="d-inline">
+                            <input type="hidden" name="culture" value="@(CultureInfo.CurrentUICulture.Name == "en" ? "ar" : "en")" />
+                            <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                            <button type="submit" class="nav-link btn btn-link text-white">
+                                @(CultureInfo.CurrentUICulture.Name == "en" ? "العربية" : "English")
+                            </button>
+                        </form>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <main class="container-fluid" style="padding-top: 80px;">
+        @RenderBody()
+    </main>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

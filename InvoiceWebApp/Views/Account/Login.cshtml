@@ -1,0 +1,64 @@
+﻿@model InvoiceWebApp.ViewModels.LoginViewModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Login"];
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+
+                    <h3 class="text-center mb-4">@Localizer["SignInHeader"]</h3>
+
+                   
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger">
+                            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                            {
+                                <div>@error.ErrorMessage</div>
+                            }
+                        </div>
+                    }
+
+                    <form asp-action="Login" method="post">
+
+                        <div class="mb-3">
+                            <label asp-for="Username" class="form-label">@Localizer["Username"]</label>
+                            <input asp-for="Username" class="form-control" />
+                            <span asp-validation-for="Username" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Password" class="form-label">@Localizer["Password"]</label>
+                            <input asp-for="Password" class="form-control" type="password" />
+                            <span asp-validation-for="Password" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="g-recaptcha" data-sitekey="6LfKgnYrAAAAAP-Hhky4Srob-sPI7Apx9tnK73u5"></div>
+                        </div>
+
+                        <div class="d-flex justify-content-between gap-2">
+                            <button type="submit" class="btn btn-primary w-100">@Localizer["SignIn"]</button>
+
+                            <a class="btn btn-outline-secondary w-100" asp-controller="Account" asp-action="Register">@Localizer["Register"]</a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
